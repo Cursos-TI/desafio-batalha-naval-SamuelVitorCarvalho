@@ -36,5 +36,58 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
+    int tabuleiro[10][10] = {
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0,},
+    };
+
+    char letras[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+
+    int navio1[3] = {3, 3, 3};
+    int navio2[3] = {3, 3, 3}; 
+
+    // posição inicial do primeiro navio
+    int colunaNavio1 = 2;
+    int linhaNavio1 = 3;
+
+    // posição inicial do segundo navio
+    int colunaNavio2 = 7;
+    int linhaNavio2 = 4;
+
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[colunaNavio1][linhaNavio1 + i] = navio1[i];
+    }
+
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linhaNavio2 + i][colunaNavio2] = navio2[i];
+    }
+
+    // Exibir o tabuleiro
+    printf("\n *** BATALHA NAVAL - TABULEIRO ***\n");
+    printf("   ");
+
+    for (int i = 0; i < 10; i++) {
+        printf("%c ", letras[i]); // Índice das colunas
+    }
+
+    printf("\n");
+
+    for (int i = 0; i < 10; i++) {
+        printf("%d  ", i); // Índice das linhas
+
+        for (int j = 0; j < 10; j++) {
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+
     return 0;
 }
