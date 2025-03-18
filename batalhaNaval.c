@@ -32,6 +32,8 @@ int main() {
 
     int navio1[3] = {3, 3, 3};
     int navio2[3] = {3, 3, 3}; 
+    int navio3[3] = {3, 3, 3}; 
+    int navio4[3] = {3, 3, 3}; 
 
     // posição inicial do primeiro navio
     int colunaNavio1 = 2;
@@ -41,12 +43,26 @@ int main() {
     int colunaNavio2 = 7;
     int linhaNavio2 = 4;
 
+    int colunaNavio3 = 1;
+    int linhaNavio3 = 3;
+
+    int colunaNavio4 = 6;
+    int linhaNavio4 = 3;
+
     for (int i = 0; i < 3; i++) {
         tabuleiro[colunaNavio1][linhaNavio1 + i] = navio1[i];
     }
 
     for (int i = 0; i < 3; i++) {
         tabuleiro[linhaNavio2 + i][colunaNavio2] = navio2[i];
+    }
+
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linhaNavio3 + i][colunaNavio3 + i] = navio3[i];
+    }
+
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[linhaNavio4 + i][colunaNavio4 - i] = navio4[i];
     }
 
     // Exibir o tabuleiro
